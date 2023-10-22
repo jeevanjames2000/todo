@@ -20,8 +20,7 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="todo-app">
-      <h1>Todo List</h1>
+    <>
       {todos.map((todo) => (
         <TodoCard
           key={todo.id}
@@ -31,7 +30,7 @@ const TodoApp = () => {
           onToggle={handleToggle}
         />
       ))}
-    </div>
+      </>
   );
 };
 

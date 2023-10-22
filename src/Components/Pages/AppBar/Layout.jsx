@@ -16,9 +16,9 @@ const Layout = () => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Grid container>
-              <Grid item container xs={12} justifyContent={"space-between"}>
-                <Grid item>
+            <Grid container xs={12}>
+              <Grid item container xs={6} justifyContent={"space-between"}>
+               
                   <IconButton
                     size="large"
                     edge="start"
@@ -28,15 +28,15 @@ const Layout = () => {
                   >
                     <MenuIcon />
                   </IconButton>
-                </Grid>
-                <Grid item>
+          
+              </Grid>
+                <Grid item container xs={6} display={'flex'} justifyContent={"center"}>
                   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     ToDo
                   </Typography>
                 </Grid>
      
-             
-              </Grid>
+          
             </Grid>
           </Toolbar>
         </AppBar>
