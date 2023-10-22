@@ -34,36 +34,8 @@ const Layout = () => {
                     ToDo
                   </Typography>
                 </Grid>
-                <Grid item xs={2}>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    // value={query}
-                    // onChange={handleFilter}
-                    placeholder="Search for Todo..."
-                    sx={{
-                      "& .MuiInputBase-root": {
-                        borderRadius: 5,
-                        width: "25rem",
-                        color: "black",
-
-                        backgroundColor: "transparent",
-                      },
-                    }}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Icon icon="mdi:magnify" fontSize="1.25rem" />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={2}>
-                  <Button color="inherit" variant="outlined">
-                    Login
-                  </Button>
-                </Grid>
+     
+             
               </Grid>
             </Grid>
           </Toolbar>

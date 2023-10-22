@@ -216,12 +216,12 @@ const Cards = () => {
             </Grid>
             <Grid item container justifyContent={"center"}>
               <Grid item style={{ marginRight: "1rem" }}>
-                <Button variant="outlined" onClick={handleAdd}>
+                <Button size="small" variant="outlined" onClick={handleAdd}>
                   Add
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="outlined" onClick={handleClose}>
+                <Button size="small" variant="outlined" onClick={handleClose}>
                   Close
                 </Button>
               </Grid>

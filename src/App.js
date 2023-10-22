@@ -1,11 +1,14 @@
 import "./App.css";
 import Main from "./Components/Mainfile";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+   <>
+   
+   <Main />
+   </>
+    
   );
 }
 
