@@ -15,10 +15,6 @@ const Main = () => {
       id: 2,
       task_name: 'Complete the weekly assignments for school',
       completed: true,
-    }, {
-      id: 3,
-      task_name: 'Call a friend or family member to catch up..',
-      completed: false,
     },
   ])
 
@@ -55,17 +51,23 @@ const Main = () => {
   const handleCloseSnackbar = () => {
     setNewTaskSnackbarOpen(false);
   };
+
+  const pendingTasks = tasks.filter((item)=>{
+    return item.completed === false
+  })
+  const pendingTAsksCount = pendingTasks.length
+  console.log("pendingTasks: ", pendingTAsksCount);
   return (
     <Grid container>
       <Grid item container xs={12} justifyContent={'center'}>
-        <Card sx={{ backgroundColor: 'black' }}>
+        <Card sx={{ backgroundColor: '#242320' }}>
           <Box display={'flex'} justifyContent={'center'} sx={{ fontSize: '1rem', color: 'white' }}>
             <Typography variant='h4'>TODOS</Typography>
           </Box>
           <CardContent>
             <Box display={'flex'} justifyContent={'center'} sx={{ marginBottom: '1rem' }}>
               <Typography variant='h5' sx={{ color: 'white' }}>
-                Pending Tasks
+                Pending Tasks({pendingTAsksCount})
               </Typography>
             </Box>
             {tasks.map((task) => (
@@ -79,21 +81,21 @@ const Main = () => {
                   padding: '5px',
                   marginBottom: '1rem',
                   color: 'white',
-                  borderColor: 'white',
+                  borderColor: '#A35709',
                   textDecoration: task.completed ? 'line-through' : 'none',
                 }}
               >
                 <Box display={'flex'} justifyContent={'start'}>
 
-                  <Typography variant='h6' sx={{ marginRight: '2rem', color: 'white' }}>
+                  <Typography variant='h6' sx={{ marginRight: '2rem', color: '#FFF' }}>
                     {task.task_name}
                   </Typography>
                 </Box>
-                <Box display={'flex'} justifyContent={'end'}>
+                <Box display={'flex'} justifyContent={'end'} alignItems={'center'}>
                   <Button
                     size="small"
                     variant='outlined'
-                    sx={{ marginRight: '10px' }}
+                    sx={{ marginRight: '10px',  borderColor: '#A35709', color: 'white', }}
                     onClick={() => handleCompleteTask(task.id)}
                   >
                     Complete
@@ -106,14 +108,13 @@ const Main = () => {
               display={'flex'}
               alignItems={'center'}
               justifyContent={'center'}
-              sx={{ marginTop: '2rem', color: 'white' }}
+              sx={{ marginTop: '2rem', }}
             >
               <TextField
                 size='small'
                 placeholder='Enter Task to Add'
-
                 onKeyPress={handleAddTask}
-                sx={{ backgroundColor: 'white', color: 'white', borderRadius: '5px' }}
+                sx={{  color: 'white',backgroundColor: 'white', borderRadius: '5px', }}
               />
             </Box>
           </CardContent>
@@ -127,7 +128,7 @@ const Main = () => {
         onClose={handleCloseSnackbar}
 
       >
-        <Alert severity="success">This is a success message!</Alert>
+        <Alert severity="success">New Task Added</Alert>
       </Snackbar>
     </Grid>
   )
